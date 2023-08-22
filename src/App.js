@@ -55,10 +55,10 @@ function App() {
             <Route path='leptop' element={<Leptop />} />
             <Route path='ItemPage/:id' element={<ItemPage />} />
           </Route>
-          <Route path='login' element={<Login />} />
-          <Route path='admin' element={<Admin />} />
-          <Route path='cart' element={<Cart/>} />
-          <Route path="/" element={<Navigate to="/main/fridge"/>}/>
+            <Route path='login' element={<Login />} />
+            <Route path='admin' element={<Admin />} />
+            <Route path='cart' element={<Cart />} />
+            <Route path="/" element={<Navigate to="/main/fridge" />} />
         </Routes>
         <Footer />
       </div>
