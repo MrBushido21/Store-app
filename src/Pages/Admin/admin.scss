@@ -1,0 +1,26 @@
+.admin-panels {
+    margin-top: 50px;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+
+    .admin-function {
+        cursor: pointer;
+        width: 50%;
+        height: 40px;
+        border:  1px solid teal;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+
+        &:hover {
+            background-color: teal;
+            transition: .3s ease 0s;
+        }
+    }
+}

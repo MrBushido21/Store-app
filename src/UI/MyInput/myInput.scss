@@ -1,0 +1,14 @@
+.myInput-body {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    input {
+        width: 50%;
+        height: 40px;
+        border-radius: 4px;
+        border: 1px solid teal;
+        font-size: 18px;
+        padding: 5px;
+    }
+}

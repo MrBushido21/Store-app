@@ -1,24 +1,68 @@
-import logo from './logo.svg';
+// App.js
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Footer from './commponents/Footer/Footer';
+import Header from './commponents/Header/Header';
+import Login from './Pages/Login/Login';
+import Main from './commponents/Main/Main';
+import Phones from './Pages/Phone/Phone';
+import Fridge from './Pages/Fridge/Fridge';
+import Leptop from './Pages/Leptop/Leptop';
+import Admin from './Pages/Admin/Admin';
+import { useEffect, useState } from 'react';
+import { Context } from './context/comtext';
+import ItemPage from './Pages/ItmePage/ItemPage';
+import Cart from './Pages/Cart/Cart';
+import { dataFrige } from './Data/dataFridge';
+import { dataPhones } from './Data/dataPhones';
+import { dataLeptop } from './Data/dataLeptop';
+import { useAllProducts } from './hooks/useId';
 
 function App() {
+  // ==== Авторизація
+  const [isAuth, setAuth] = useState(false)
+
+  // === Лічильник товарів у корзині, товари у корзині, грошова сума товарів у корзині
+  let [cartCounter, setCartCounter] = useState(0)
+  const [cartItems, setCartItems] = useState([]);
+  let [summ, setSumm] = useState(0)
+
+  // === Зберігання стану аунтифікації на сторінці
+  useEffect(() => {
+    if(localStorage.getItem("auth")) {
+      setAuth(true)
+    }
+  }, [])
+
+  //========================
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context.Provider value={{
+      isAuth,
+      setAuth,
+      cartCounter,
+      setCartCounter,
+      cartItems,
+      setCartItems,
+      summ, 
+      setSumm,
+    }}>
+      <div className='wrapper'>
+        <Header />
+        <Routes>
+          <Route path='/main' element={<Main />}>
+            <Route path='phones' element={<Phones />} />
+            <Route path='fridge' element={<Fridge />} />
+            <Route path='leptop' element={<Leptop />} />
+            <Route path='ItemPage/:id' element={<ItemPage />} />
+          </Route>
+          <Route path='login' element={<Login />} />
+          <Route path='admin' element={<Admin />} />
+          <Route path='cart' element={<Cart/>} />
+          <Route path="/" element={<Navigate to="/main/fridge"/>}/>
+        </Routes>
+        <Footer />
+      </div>
+    </Context.Provider>
   );
 }
 

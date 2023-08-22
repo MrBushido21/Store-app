@@ -1,0 +1,18 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  align-items: center;
+  background-color: teal;
+}
+.navbar a {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+.navbar a.active {
+  color: greenyellow;
+}
+.navbar a:hover {
+  color: rgb(243, 204, 204);
+}
