@@ -55,10 +55,10 @@ function App() {
             <Route path='leptop' element={<Leptop />} />
             <Route path='ItemPage/:id' element={<ItemPage />} />
           </Route>
-            <Route path='login' element={<Login />} />
-            <Route path='admin' element={<Admin />} />
-            <Route path='cart' element={<Cart />} />
-            <Route path="/" element={<Navigate to="/main/fridge" />} />
+            <Route path='/sotre-app/login' element={<Login />} />
+            <Route path='/sotre-app/admin' element={<Admin />} />
+            <Route path='/sotre-app/cart' element={<Cart />} />
+            <Route path="/sotre-app" element={<Navigate to="/main/fridge" />} />
         </Routes>
         <Footer />
       </div>
