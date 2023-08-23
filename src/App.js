@@ -49,7 +49,7 @@ function App() {
       <div className='wrapper'>
         <Header />
         <Routes>
-          <Route path='/main' element={<Main />}>
+          <Route path='/store-app/main' element={<Main />}>
             <Route path='phones' element={<Phones />} />
             <Route path='fridge' element={<Fridge />} />
             <Route path='leptop' element={<Leptop />} />
@@ -58,7 +58,7 @@ function App() {
             <Route path='/store-app/login' element={<Login />} />
             <Route path='/store-app/admin' element={<Admin />} />
             <Route path='/store-app/cart' element={<Cart />} />
-            <Route path='/store-app' element={<Navigate to="/store-app/login" />} />
+            <Route path='/store-app' element={<Navigate to="/store-app/main/fridge" />} />
         </Routes>
         <Footer />
       </div>

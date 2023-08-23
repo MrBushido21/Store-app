@@ -17,7 +17,7 @@ const addAcount = () => {
     setUser(false)
 }
 const login = () => {
-    navigate("/main/fridge")
+    navigate("/store-app/main/fridge")
     setAuth(true)
     localStorage.setItem("auth", "true")
 }
@@ -25,7 +25,7 @@ const login = () => {
 
 const {isAuth, setAuth} = useContext(Context)
 if(isAuth) {
-    return navigate("/main/fridge")
+    return navigate("/store-app/main/fridge")
 }
 
 return (

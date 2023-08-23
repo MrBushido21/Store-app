@@ -19,11 +19,11 @@ function Header() {
             <div className="container">
                 {isAuth &&
                     <div className="header__flexrow">
-                        <Link to={isAuth ? "/main/fridge" : "/login"} className="header__logo">ІнтренетМагазин</Link>
+                        <Link to="/store-app/main/fridge" className="header__logo">ІнтренетМагазин</Link>
                         <div className="header__buttons">
-                            <Link to="/cart" className="header__cart">Корзина: <span>{cartCounter}</span></Link>
-                            <Link to="/admin" className="header__button">Адмін</Link>
-                            <Link to="/login" onClick={toogleAuth} className="header__button">Вийти</Link>
+                            <Link to="/store-app/cart" className="header__cart">Корзина: <span>{cartCounter}</span></Link>
+                            <Link to="/store-app/admin" className="header__button">Адмін</Link>
+                            <Link to="/store-app/login" onClick={toogleAuth} className="header__button">Вийти</Link>
                         </div>
                     </div>
                 }

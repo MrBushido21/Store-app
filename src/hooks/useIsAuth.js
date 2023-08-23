@@ -14,7 +14,7 @@ export const useAuth = () => {
           if(isAuth) {
             return navigate(adres)
           } else {
-            return navigate("/login")
+            return navigate("/store-app/login")
           }
         }, 10)
         
