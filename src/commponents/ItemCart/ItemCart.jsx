@@ -9,7 +9,7 @@ function ItemCart(props) {
     const navigate = useNavigate()
 
     const opentItem = () => {
-        return navigate(`/main/itemPage/${props.id}`)
+        return navigate(`store-app/main/itemPage/${props.id}`)
     }
 
     let {cartCounter, setCartCounter, cartItems, setCartItems, setSumm, summ} = useContext(Context)
